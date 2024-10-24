@@ -8,8 +8,9 @@ The following drawbacks will need to be mitigated:
 - Methods would need to be self-contained at time of approval, so there's a need to copy-paste definitions from here into the method at that time
 
 -->
+# Common terminology
 
-# Glossary
+## Glossary
 
 The following definitions apply to all usages of the following terms (including their plural forms) in the methodologies:
 
@@ -19,9 +20,27 @@ The following definitions apply to all usages of the following terms (including 
 
 - **Site** refers to a geographically delimited facility where the assets covered by the methodology are located. Examples of this are a building and an energy production facility.
 
-# Normative language
+## Normative language
 
 The methodologies make use of the following wordings to distinguish between requirements, recommendations and options (accordingly with common standardisation practices):
 - **shall** indicates a *requirement*,
 - **should** indicates a *recommendation*,
 - **may** indicates an *option* that is permitted.
+
+## Acronyms
+
+
+| Acronym | Full text                       |
+|---------|---------------------------------|
+| CDM     | Clean development mechanism     |
+| EAC     | Energy Attribute Certificate    |
+| GHG     | Greenhouse gas(es)              |
+| kW      | Kilowatt (power unit)           |
+| kWh     | Kilowatt-hour (energy unit)     |
+| UN      | United Nations                  |
+
+## Units
+
+Whenever possible, quantities in the methodologies should be expressed in International System (SI) units.
+
+<!-- This may prove to be controversial internally in the alliance, but is worth promoting, given the international scope of the alliance -->
