@@ -9,6 +9,9 @@ https://docs.github.com/en/get-started/writing-on-github/getting-started-with-wr
 And if you need a tool to make the rendering work in VSCode, here is a good plugin:
 https://marketplace.visualstudio.com/items?itemName=bierner.markdown-preview-github-styles 
 
+Inspirations:
+- https://flexvalue.readthedocs.io/en/latest/ 
+
 --> 
 # Carbon-flexing of space and water heating
 
@@ -110,13 +113,7 @@ The project country shall meet the following criteria:
 
 ## Project boundary
 
-GHG sources included or excluded from the project boundary.
-
-| Source                     | Gas     | Included | Justification           |
-| -------------------------- |---------|----------|------------------------ |
-| Grid electricity displaced | $CO_2$  | Yes      | Main emission source    |
-| Grid electricity displaced | $NO_x$, $SO_x$  | No       | Emissions data is not sufficiently granular and available the half hour or hour |
-
+[...]
 
 ## Measurement
 

@@ -90,10 +90,14 @@ The system to which the methodology is applied shall meet the following requirem
 
 <!-- Here, we might want to allow for flexibility in potential other subsystems covered by the same meter (e.g. these shall not use more than 5% of the energy used by the asset) -->
 
+2. there is no on-site generation whose output is affected by the delivery of flexibility.
+
+
+
 
 ### Requirements on the system during the project lifetime
 
-During the whole duration of the project, the *heating assets* owner shall demonstrate proof of ownership of these assets and continued operation of their heat delivery. This documentation shall be made via all of the following:
+During the whole duration of the project, the *flexible assets* owner shall demonstrate proof of ownership of these assets and continued operation of their heat delivery. This documentation shall be made via all of the following:
 
 - sharing of consumption data throughout the period,
 
@@ -107,6 +111,11 @@ During the whole duration of the project, the *heating assets* owner shall demon
 
 ### Requirements on the operating context
 
+The power system within which the system operates shall meet the following requirements to be eligible:
+
+1. Hourly (or sub-hourly) carbon intensity data is available
+
+<!-- We may want to have some sort of criterion about a minimum amount of fluctuations of the carbon intensity over time. This will however need to be specified in such a way that it does not excessively complexify applicability -->
 [...]
 
 
@@ -126,8 +135,8 @@ This section introduces the underlying data requirements.
 
 The emission intensity data used in calculations shall meet the following requirements:
 
-1. the time resolution of the data is hourly or higher,
-2. the geographical resolution of the data is country-level or higher,
+1. the time resolution of the data is hourly or more granular,
+2. the geographical resolution of the data is country-level or more granular,
 3. the signal corresponds to an average emission intensity of *consumed* electricity,
 4. the source of the carbon intensity data shall be recorded as part of the digital asset generated.
 
