@@ -31,7 +31,7 @@ Inspirations:
 
 ## Summary description
 
-This methodology focuses on measurements and verification of the impact of delivering flexibility from residential heating systems on a given site, where this flexibility is operated according to a carbon-intensity signal.
+This methodology focuses on measurements and verification of the impact of delivering flexibility from electricity-consuming systems on a given site, where this flexibility is operated according to a carbon-intensity signal.
 The purpose of this methodology is to generate *Environmental Attribute Certificates* representing the value of energy flexibility delivered (at a specific time and geographical location), which can then be used in reporting or traded.
 
 ## Definitions
@@ -69,7 +69,7 @@ The following definitions shall apply to all usages of the following terms (incl
 
 - **Flexibility** designates the usage of the ability of an energy-consuming asset to adjust its demand compared to a *baseline* demand profile.
 
-- **Flexible asset** designates the energy-consuming asset (or set of assets) whose operation is modified to provide the flexibility.
+- **Flexible asset** designates the energy-consuming asset (or set of assets if those are aggregated together as a single one) whose operation is modified to provide the flexibility.
 
 - **High resolution data** is data whose time resolution is hourly or sub-hourly (e.g. every 15 or 30 minutes).
 
@@ -85,25 +85,31 @@ This section lays out the requirements on a given context for this methodology t
 
 The system to which the methodology is applied shall meet the following requirements to be eligible:
 
+1. the combined rated power of the flexible assets is below 1 MW,
+<!-- Here we'll need to check that this is above the limit of the assets that Piclo flexes -->
 
-1. dedicated sub-metering of the power delivered to the *flexible assets* is implemented, either individually or aggregated (if several flexible assets are present on site),
+2. dedicated sub-metering of the power delivered to the *flexible assets* is implemented, either individually or aggregated (if several flexible assets are present on site),
 
 <!-- Here, we might want to allow for flexibility in potential other subsystems covered by the same meter (e.g. these shall not use more than 5% of the energy used by the asset) -->
 
-2. there is no on-site generation whose output is affected by the delivery of flexibility,
+3. there is no on-site generation whose output is affected by the delivery of flexibility,
 
-3. the control delivering flexibility does not aim at decreasing (or increasing) the energy demand, but only focuses on shifting a given demand in time,
+4. the control delivering flexibility does not aim at decreasing (or increasing) the energy demand, but only focuses on shifting a given demand in time,
 <!-- This is to ensure that we can claim that before/after energy usage is the same -->
 
-4. baseline is available in the form of either:
+5. baseline is available in the form of either:
 
-    a. an original schedule transmitted by the control
+    a. an original schedule transmitted by the control,
 
     or
 
-    b. historical high resolution data covering a representative period where the system was operating in a *business-as-usual* manner.
+    b. historical high resolution data covering a representative period where the system was operating in a *business-as-usual* manner,
     <!-- We need to define what a "representative period" looks like -->
 
+    or
+
+    c. high resolution data from a population of assets of similar nature and consumption patterns to the flexible assets operating in the same period as the period where the flexibility is delivered.
+    <!-- We need to define what a "similar behaviour" looks like -->
 
 
 ### Requirements on the system during the project lifetime
@@ -132,7 +138,7 @@ The power system within which the system operates shall meet the following requi
 
 ## Project boundary
 
-[...]
+The boundary of the project is limited to the site where the flexible assets operate. As the projects covered by this methodology are of small to medium scale, their impact on power system control room decisions are neglected, so that the average emission signal is considered to be an adequate depiction of the impact of the power that they do or do not consume.
 
 ## Measurement
 
@@ -161,14 +167,30 @@ This section provides the key aspects of the verification methodology, based upo
 
 The baseline scenario considered is a scenario where the flexibility is not delivered an the flexible asset. Two methods are allowed, as described in the sub-sections below. The method chosen shall be specified in the digital asset.
 
-#### Method 1 - Using a historical counterfactual
+#### Method 1 - Using an original schedule counterfactual
+
+In cases where the flexible assets are controlled by a scheduler, an original schedule counterfactual may be used if the scheduler is able to export an original schedule (in the sense of *business-as-usual* schedule).
+
+In such a case, the baseline demand shall be determined from the schedule using a demand model translating the schedule in an equivalent energy demand. This model shall be constructed in such a way that the sum of the baseline demand is equal to the actual demand for each PERIOD.  
+
+<!-- Add:
+- requirement to disclose the baseline demand model as part of the M&V plan 
+- definition of "PERIOD", maybe using a better word like "flexibility delivery window"
+-->
+
+#### Method 2 - Using a historical load shape counterfactual
+
+<!-- Using scaled median load shape of similar days -->
 
 (...)
 
 
-#### Method 2 - Using an original schedule counterfactual
+#### Method 3 - Using a control group counterfactual
 
-(... CR method ...)
+<!-- Using scaled median load shape of similar assets on a similar day -->
+
+(...)
+
 
 
 
@@ -201,7 +223,7 @@ The digital certificates resulting from this verification methodology shall cont
     - A unique identifier
     - Address of the site where it is installed (optional if GPS coordinates are provided)
     - GPS coordinates of the site (optional if full address is provided, as it will be inferred from it)
-    - Rated power (kWp)
+    - Rated power (kW)
     - Date when the flexibility delivery started
 
 - Grid connection information for the site:
@@ -227,7 +249,7 @@ The digital certificates resulting from this verification methodology shall cont
     - A link to this methodology (where the URL points to the specific version used to generate the certificate)
 
 - Legal information:
-    - Reference to the contractual proof of ownership of the environmental attributes generated by the heating asset.
+    - Reference to the contractual proof of ownership of the environmental attributes generated by the flexible asset.
 
 
 ## References
@@ -260,6 +282,6 @@ The source of the carbon intensity data shall be recorded as part of the digital
 
 ## Appendix 2 - M&V plan template
 
-(reuse and adapt from solar methodology where available)
+<!-- reuse and adapt from solar methodology where available + add baseline method chosen -->
 
 [...]
