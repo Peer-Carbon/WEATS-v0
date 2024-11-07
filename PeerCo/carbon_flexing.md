@@ -24,7 +24,7 @@ Inspirations:
 
 **Developed by**: *[PeerCo](www.peerco.earth)*
 
-**Revision date**: *October 10th 2024*
+**Revision date**: *November 7th 2024*
 
 **Sectoral scope**:  *Energy / Energy Distribution / Energy Demand*
 
@@ -172,10 +172,19 @@ The baseline scenario considered is a scenario where the flexibility is not deli
 
 
 
-### Quantification of GHG emission reduction
+### Quantification of GHG emission reduction and associated trading requirements
 
-(...)
+For each period *i*, the certificate's energy content shall be:
+> EAC energy content[i] [kWh] = (Actual energy demand[i] [kWh]) - (Baseline energy demand[i] [kWh])
 
+and its carbon content shall be:
+> EAC carbon content[i] [gCO2e] = (EAC energy content[i] [kWh]) x (Average grid emission intensity[i] [gCO2e/kWh])
+
+This will naturally lead to a combination of EACs with positive and negative values. In order to ensure meaningful usage of the EAC scheme, trading of such EACs shall only be permitted in bulks where the sum of the energy content of the EACs in a bulk shall be below a near-zero threshold in absolute value. For practical purposes and to account for rounding errors in the computation process, "near-zero" shall be interpreted as a number below 0.1% of the sum of positive EACs in the bulk:
+
+> $EAC \  bulk \  energy \  content \ threshold \ [kWh] = \frac{\sum_i max(0, EAC \ energy \ content \ [i] \ [kWh])}{1000}$
+
+<!-- This provision is to avoid the risk of trading only the positive part and having liabilities stacking up on the other end -->
 
 ### Information content of the digital certificate
 
